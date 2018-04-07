@@ -5,15 +5,17 @@
 		<script src="masonry.pkgd.min.js"></script>
 		<style>
 			body {
-			  font-family: 'Josefin Sans', sans-serif;
+				margin:auto;
+				font-family: 'Josefin Sans', sans-serif;
 			}
-
+			
 			.portfolio-img {
-				padding:10px;
-				border-radius: 20px;
 				cursor: pointer;
-				transition: 0.3s;
-				width: 30%;
+				
+				height:auto;
+				max-height:100vh;
+				width:auto;
+				max-width:100%;
 			}
 			.portfolio-img:hover {opacity: 0.7;}
 
@@ -76,7 +78,51 @@
 				text-decoration: none;
 				cursor: pointer;
 			}
+			
+			.masonry {
+				column-gap: 0px;
+			}
+			
+			@media only screen and (min-width: 400px) {
+				.masonry {
+					-moz-column-count: 2;
+					-webkit-column-count: 2;
+					column-count: 2;
+				}
+			}
 
+			@media only screen and (min-width: 1100px) {
+				.masonry {
+					-moz-column-count: 3;
+					-webkit-column-count: 3;
+					column-count: 3;
+				}
+			}
+			
+			@media only screen and (min-width: 1600px) {
+				.masonry {
+					-moz-column-count: 4;
+					-webkit-column-count: 4;
+					column-count: 4;
+				}
+			}
+			
+			@media only screen and (min-width: 2200px) {
+				.masonry {
+					-moz-column-count: 5;
+					-webkit-column-count: 5;
+					column-count: 5;
+				}
+			}
+			
+			@media only screen and (min-width: 3000px) {
+				.masonry {
+					-moz-column-count: 6;
+					-webkit-column-count: 6;
+					column-count: 6;
+				}
+			}
+			
 			@media (any-pointer: coarse) {
 				//mobile
 			}
@@ -85,26 +131,17 @@
 <body>
 	<center>
 		<img src="images/logo_cropped.png" alt="astro" width="329" height="262.5">
-		<p>i'll build it one day i swear</p>
 	</center>
-
-	<h1>test</h1>
-	<div class="grid" data-masonry='{ "itemSelector": ".portfolio-img" }'>
-		<img class="tall portfolio-img" src="https://pbs.twimg.com/media/DXRubtRW0AArKlp.jpg:large" alt="portfolio-image">
-		<img class="wide portfolio-img" src="https://pbs.twimg.com/media/DVgGRa4W0AA7cdR.jpg:large" alt="portfolio-image">
-		<img class="tall portfolio-img" src="https://pbs.twimg.com/media/DXRubtRW0AArKlp.jpg:large" alt="portfolio-image">
-		<img class="wide portfolio-img" src="https://pbs.twimg.com/media/DVgGRa4W0AA7cdR.jpg:large" alt="portfolio-image">
-		<img class="tall portfolio-img" src="https://pbs.twimg.com/media/DXRubtRW0AArKlp.jpg:large" alt="portfolio-image">
-		<img class="wide portfolio-img" src="https://pbs.twimg.com/media/DVgGRa4W0AA7cdR.jpg:large" alt="portfolio-image">
-		<img class="tall portfolio-img" src="https://pbs.twimg.com/media/DXRubtRW0AArKlp.jpg:large" alt="portfolio-image">
-		<img class="wide portfolio-img" src="https://pbs.twimg.com/media/DVgGRa4W0AA7cdR.jpg:large" alt="portfolio-image">
-		<img class="tall portfolio-img" src="https://pbs.twimg.com/media/DXRubtRW0AArKlp.jpg:large" alt="portfolio-image">
-		<img class="wide portfolio-img" src="https://pbs.twimg.com/media/DVgGRa4W0AA7cdR.jpg:large" alt="portfolio-image">
+	<div class="masonry">
+		<img class="portfolio-img tall" src="images\portfolio\dagagd.png">
+		<img class="portfolio-img wide" src="images\portfolio\final.png">
+		<img class="portfolio-img tall" src="images\portfolio\sxdhts.png">
+		<img class="portfolio-img wide" src="images\portfolio\Unnamed.png">
 	</div>
 
 	<div id="modal" class="modal">
-	   <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
-	  <img class="modal-content" id="img01">
+		<span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+		<img class="modal-content" id="img01">
 	</div>
 
 	<script>
