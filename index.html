@@ -9,6 +9,28 @@
 				font-family: 'Josefin Sans', sans-serif;
 			}
 			
+			.sub-logo {
+				border-radius:64px;
+				width: 10%;
+				max-width: 128px;
+				min-width:64px;
+				margin: auto;
+				margin-bottom:15px;
+			}
+			
+			.separator{
+				background-color:black;
+				height:10px;
+				width:100%;
+			}
+			
+			.grow { transition: all .2s ; }
+			.grow:hover { transform: scale(1.2); }
+			body {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 17px;
+			}
+			
 			.portfolio-img {
 				cursor: pointer;
 				
@@ -129,21 +151,30 @@
 		</style>
 	</head>
 <body>
-	<center>
+	<div style="text-align:center">
 		<img src="images/logo_cropped.png" alt="astro" width="329" height="262.5">
-	</center>
-	<div class="masonry">
-		<img class="portfolio-img tall" src="images\portfolio\dagagd.png">
-		<img class="portfolio-img wide" src="images\portfolio\final.png">
-		<img class="portfolio-img tall" src="images\portfolio\sxdhts.png">
-		<img class="portfolio-img wide" src="images\portfolio\Unnamed.png">
+		<br>
+		<a href="https://twitter.com/Astroidtbh"><img src="images/twitter_logo.png" alt="twitter" class="grow sub-logo"/></a>
+		<a href="https://github.com/Astr01d"><img src="images/github_logo.png" alt="github" class="grow sub-logo"/></a>
+	</div>
+	<div class="separator">
+	</div>
+	<div class="masonry" id="portfolio">
 	</div>
 
 	<div id="modal" class="modal">
 		<span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
 		<img class="modal-content" id="img01">
 	</div>
-
+	
+	<script>
+		var allImages = "";
+		for (var i = 1; i < 13; i++) {
+			allImages += '<img class="portfolio-img" src="images/portfolio/'+i+'.png">';
+		}
+		$('#portfolio').append(allImages);
+	</script>
+	
 	<script>
 		var modal = document.getElementById('modal');
 
