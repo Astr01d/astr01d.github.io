@@ -2,18 +2,21 @@
 	<head>
 		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"> 
 		<script src="jquery.js"></script>
+		<script src="masonry.pkgd.min.js"></script>
 		<style>
 			body {
 			  font-family: 'Josefin Sans', sans-serif;
 			}
 
-			.myImg {
-				border-radius: 5px;
+			.portfolio-img {
+				padding:10px;
+				border-radius: 20px;
 				cursor: pointer;
 				transition: 0.3s;
+				width: 30%;
 			}
-			.myImg:hover {opacity: 0.7;}
-
+			.portfolio-img:hover {opacity: 0.7;}
+			
 			.modal {
 				justify-items
 				text-align:center;
@@ -87,9 +90,17 @@
 	</center>
 	
 	<h1>test</h1>
-	<div class="container">
-		<img class="myImg" src="https://pbs.twimg.com/media/DXRubtRW0AArKlp.jpg:large" alt="portfolio-image" width="25%">
-		<img class="myImg" src="https://pbs.twimg.com/media/DVgGRa4W0AA7cdR.jpg:large" alt="portfolio-image" width="25%">
+	<div class="grid" data-masonry='{ "itemSelector": ".portfolio-img" }'>
+		<img class="tall portfolio-img" src="https://pbs.twimg.com/media/DXRubtRW0AArKlp.jpg:large" alt="portfolio-image">
+		<img class="wide portfolio-img" src="https://pbs.twimg.com/media/DVgGRa4W0AA7cdR.jpg:large" alt="portfolio-image">
+		<img class="tall portfolio-img" src="https://pbs.twimg.com/media/DXRubtRW0AArKlp.jpg:large" alt="portfolio-image">
+		<img class="wide portfolio-img" src="https://pbs.twimg.com/media/DVgGRa4W0AA7cdR.jpg:large" alt="portfolio-image">
+		<img class="tall portfolio-img" src="https://pbs.twimg.com/media/DXRubtRW0AArKlp.jpg:large" alt="portfolio-image">
+		<img class="wide portfolio-img" src="https://pbs.twimg.com/media/DVgGRa4W0AA7cdR.jpg:large" alt="portfolio-image">
+		<img class="tall portfolio-img" src="https://pbs.twimg.com/media/DXRubtRW0AArKlp.jpg:large" alt="portfolio-image">
+		<img class="wide portfolio-img" src="https://pbs.twimg.com/media/DVgGRa4W0AA7cdR.jpg:large" alt="portfolio-image">
+		<img class="tall portfolio-img" src="https://pbs.twimg.com/media/DXRubtRW0AArKlp.jpg:large" alt="portfolio-image">
+		<img class="wide portfolio-img" src="https://pbs.twimg.com/media/DVgGRa4W0AA7cdR.jpg:large" alt="portfolio-image">
 	</div>
 	
 	<div id="modal" class="modal">
@@ -100,10 +111,10 @@
 	<script>
 		var modal = document.getElementById('modal');
 		
-		var img = $('.myImg');
+		var img = $('.portfolio-img');
 		var modalImg = $("#img01");
 		var captionText = document.getElementById("caption");
-		$('.myImg').click(function(){
+		$('.portfolio-img').click(function(){
 			modal.style.display = "flex";
 			var newSrc = this.src;
 			modalImg.attr('src', newSrc);
