@@ -8,7 +8,7 @@
 				margin:auto;
 				font-family: 'Josefin Sans', sans-serif;
 			}
-			
+
 			.sub-logo {
 				border-radius:64px;
 				width: 10%;
@@ -17,20 +17,20 @@
 				margin: auto;
 				margin-bottom:15px;
 			}
-			
+
 			.separator{
 				background-color:black;
 				height:10px;
 				width:100%;
 			}
-			
+
 			.grow { transition: all .2s ; }
 			.grow:hover { transform: scale(1.2); }
 			body {
 				font-family: 'Open Sans', sans-serif;
 				font-size: 17px;
 			}
-			
+
 			.portfolio-img {
 				cursor: pointer;
 				z-index: 20;
@@ -100,11 +100,11 @@
 				text-decoration: none;
 				cursor: pointer;
 			}
-			
+
 			.masonry {
 				column-gap: 0px;
 			}
-			
+
 			@media only screen and (min-width: 400px) {
 				.masonry {
 					-moz-column-count: 2;
@@ -120,7 +120,7 @@
 					column-count: 3;
 				}
 			}
-			
+
 			@media only screen and (min-width: 1600px) {
 				.masonry {
 					-moz-column-count: 4;
@@ -128,7 +128,7 @@
 					column-count: 4;
 				}
 			}
-			
+
 			@media only screen and (min-width: 2200px) {
 				.masonry {
 					-moz-column-count: 5;
@@ -136,7 +136,7 @@
 					column-count: 5;
 				}
 			}
-			
+
 			@media only screen and (min-width: 3000px) {
 				.masonry {
 					-moz-column-count: 6;
@@ -144,7 +144,7 @@
 					column-count: 6;
 				}
 			}
-			
+
 			@media (any-pointer: coarse) {
 				//mobile
 			}
@@ -166,7 +166,7 @@
 		<span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
 		<img class="modal-content" id="img01">
 	</div>
-	
+
 	<script>
 		var allImages = "";
 		for (var i = 1; i < 13; i++) {
@@ -174,7 +174,7 @@
 		}
 		$('#portfolio').append(allImages);
 	</script>
-	
+
 	<script>
 		var modal = document.getElementById('modal');
 
@@ -188,5 +188,8 @@
 			captionText.innerHTML = this.alt;
 		});
 	</script>
+	<center>
+		<p>made by <a href="https://twitter.com/r0wan_dev"> @r0wan_dev</a></p>
+	</center>
 </body>
 </html>
