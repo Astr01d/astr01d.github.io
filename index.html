@@ -21,8 +21,11 @@
 
 			.separator{
 				background-color:black;
-				height:1.1px;
+				height:2px;
+				position:relative;
+				z-index:0;
 				width:100%;
+				box-shadow: 0px -2px 20px 5px rgba(0,0,0,0.6);
 			}
 			
 			#credit {
@@ -41,21 +44,30 @@
 			.grow:hover { transform: scale(1.15); }
 			
 			.portfolio-img {
+				z-index:0;
 				cursor: pointer;
-				z-index: 20;
 				height:auto;
 				max-height:100vh;
 				width:auto;
 				max-width:100%;
 			}
-			.portfolio-img:hover {opacity: 0.8;}
-
+			.portfolio-img:hover {
+				opacity: 0.8;
+			}
+			
+			.pi-border {
+				box-shadow: inset 0px 0px 6px 6px rgba(0,0,0,0.5);
+				z-index:1;
+				position:relative;
+				display: inline-block;
+			}
+			
 			.modal {
 				justify-items
 				text-align:center;
 				display: none;
 				position: fixed;
-				z-index: 1;
+				z-index: 10;
 				left: 0;
 				top: 0;
 				width: 100%;
@@ -179,7 +191,7 @@
 	<script>
 		var allImages = "";
 		for (var i = 1; i < 13; i++) {
-			allImages += '<img class="portfolio-img" src="images/portfolio/'+i+'.png">';
+			allImages += '<div class="pi-border"><img class="portfolio-img" src="images/portfolio/'+i+'.png"></div>';
 		}
 		$('#portfolio').append(allImages);
 	</script>
